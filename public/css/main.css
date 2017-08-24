@@ -1,0 +1,28 @@
+.main {
+    background-color: #4393b9;
+    color: white;
+    text-align: center;
+    margin: 75px auto;
+}
+.main a {
+    display: inline-block;
+}
+
+
+#home .row {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+#home i {
+    color: #3d5a98;
+    font-size: 100px;
+}
+#home img {
+    width: auto;
+    height: 100px;
+}
+
+#home .col-md-4 {
+  text-align:center;
+}
