@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $page = 'new_poll';
+        return view('home', compact('page'));
     }
 }

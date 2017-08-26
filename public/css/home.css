@@ -1,0 +1,12 @@
+
+
+.centered-btn {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#new_poll_buttons .btn {
+    width: 100%;
+    margin: 20px 0;
+}
