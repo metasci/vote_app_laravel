@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class MyPollsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $polls = \App\Poll::where('user_id', \Auth::id())->get();
+        // return $polls;
+        return view('my_polls', compact('polls'));
     }
 
     /**

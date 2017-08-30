@@ -17,4 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/new-poll', 'NewPollController@index')->name('new_poll');
+    Route::post('/new-poll', 'NewPollController@store')->name('store_poll');
+    
+    Route::get('/my-polls', 'MyPollsController@index')->name('my_polls');
+
+
+});
