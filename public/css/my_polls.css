@@ -1,3 +1,14 @@
 .list-group-item {
     font-size: 20px;
 }
+.list-group-item a {
+    margin-right: 10px;
+}
+
+.list-group-item .row {
+    padding-right: 5px;
+}
+
+.list-group.container .container {
+    text-align: center;
+}

@@ -4,18 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class MyPollsController extends Controller
+class PollInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(\App\Poll $poll)
     {
-        $polls = \App\Poll::where('user_id', \Auth::id())->get();
-        
-        return view('my_polls', compact('polls'));
+        return $poll->options;
     }
 
     /**
@@ -79,11 +77,8 @@ class MyPollsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(\App\Poll $poll)
+    public function destroy($id)
     {
-        $poll->options()->delete();
-        $poll->delete();
-
-        return static::index();
+        //
     }
 }

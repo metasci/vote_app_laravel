@@ -14,6 +14,7 @@
                 <h2>New Poll</h2>
                 <form id="new-poll" action="/new-poll" method="post">
                     {{ csrf_field() }}
+                    @include('layouts.errors')
 
                     {{-- what do i do about this? --}}
                     {{-- there has to be a way to access current logged in user info without this obvious security breach --}}
@@ -49,7 +50,7 @@
             var $optBtn = $('#more_opt_btn'); // more options button
 
             $optBtn.on('click', function() {
-               $options.append('<input class="form-control" type="text" placeholder="New Option" name="option">');
+               $options.append('<input class="form-control" type="text" placeholder="New Option" name="options[]">');
             });
         });
 </script>

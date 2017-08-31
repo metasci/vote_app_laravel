@@ -17,7 +17,7 @@ class CreatePollsTable extends Migration
             $table->increments('id');
             // add an Options migration/model with relationship on polls_id
             $table->integer('user_id');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('title');
             $table->timestamps();
         });

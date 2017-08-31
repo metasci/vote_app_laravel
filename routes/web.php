@@ -22,8 +22,12 @@ Route::middleware(['auth'])->group(function() {
 
     Route::get('/new-poll', 'NewPollController@index')->name('new_poll');
     Route::post('/new-poll', 'NewPollController@store')->name('store_poll');
-    
-    Route::get('/my-polls', 'MyPollsController@index')->name('my_polls');
 
+    Route::get('/my-polls', 'MyPollsController@index')->name('my_polls');
+    Route::get('/my-polls/poll-info/{poll}', 'PollInfoController@index')->name('poll_info');
+    Route::delete('/my-polls/delete-poll/{poll}', 'MyPollsController@destroy')->name('delete_poll');
+
+    // use this route to send voters to voting page - excepts uniqid slug
+    // Route::get('/vote/{url}', );
 
 });
