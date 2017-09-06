@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \App\Poll;
+use \App\PollOption;
 
-
-class PollInfoController extends Controller
+class VoteController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Poll $poll)
+    public function index($url)
     {
-        return view('poll_info', compact('poll'));
+        $poll = Poll::where('url', $url)->first();
+        // return $poll;
+        return view('vote', compact('poll'));
     }
 
     /**
@@ -68,9 +70,12 @@ class PollInfoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PollOption $option)
     {
-        //
+        $option->vote_count++;
+        $option->save();
+
+        return redirect()->route('main');
     }
 
     /**

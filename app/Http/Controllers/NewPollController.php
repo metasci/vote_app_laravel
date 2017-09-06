@@ -45,7 +45,7 @@ class NewPollController extends Controller
 
         $rules = [
             'question' => 'required',
-            'options[]' => 'required'
+            'options.*' => 'required'
         ];
 
         $messages = [

@@ -21,13 +21,13 @@
                                 <span class="col-lg-8 col-md-8 col-sm-8 col-xs-8">{{ $poll->title }}</span>
 
                                 {{-- [X] build Route to accept $poll->url --}}
-                                {{-- build view - show graphs and options (stats) --}}
-                                {{-- build separate view for annonymous voters to vote --}}
-                                <a href="{{ '/my-polls/poll-info/' . $poll->id }}"  class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2">View Poll <i class="glyphicon glyphicon-trash"></i></a>
+                                {{-- [X] build view - show graphs and options (stats) --}}
+                                {{--  build separate view for annonymous voters to vote --}}
+                                <a href="{{ '/poll-info/' . $poll->id }}"  class="btn btn-primary col-lg-2 col-md-2 col-sm-2 col-xs-2">View Poll <i class="glyphicon glyphicon-trash"></i></a>
 
-                                {{-- make this button work --}}
-                                {{-- delete poll and associated options --}}
-                                {{-- return to my-polls view --}}
+                                {{-- [X] make this button work --}}
+                                {{-- [X] delete poll and associated options --}}
+                                {{-- [X] return to my-polls view --}}
                                 <form action="{{ '/my-polls/delete-poll/' . $poll->id }}" method="post">
                                     {{ method_field('delete') }}
                                     {{ csrf_field() }}

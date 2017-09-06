@@ -13,10 +13,13 @@
 
             <div style="text-align: center" class="container">
                 <h2>Congratulations!</h2>
-                <h3>Voters can access your poll at this URL:</h3>
 
-                <!-- create custom url and display it here -->
-                <a href="{{ env('APP_URL') . '/vote/' . $url }}"><h3>{{ env('APP_URL') . '/vote/' . $url }}</h3></a>
+                <div class="alert alert-info">
+                    <h3>Voters can access your poll at this URL:</h3>
+
+                    <!-- create custom url and display it here -->
+                    <a href="{{ env('APP_URL') . '/vote/' . $url }}"><h3>{{ env('APP_URL') . '/vote/' . $url }}</h3></a>
+                </div>
             </div>
 
         </div>

@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('main');
-});
+})->name('main');
 
 Auth::routes();
 
@@ -24,10 +24,11 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/new-poll', 'NewPollController@store')->name('store_poll');
 
     Route::get('/my-polls', 'MyPollsController@index')->name('my_polls');
-    Route::get('/my-polls/poll-info/{poll}', 'PollInfoController@index')->name('poll_info');
     Route::delete('/my-polls/delete-poll/{poll}', 'MyPollsController@destroy')->name('delete_poll');
 
-    // use this route to send voters to voting page - excepts uniqid slug
-    // Route::get('/vote/{url}', );
-
+    Route::get('/poll-info/{poll}', 'PollInfoController@index')->name('poll_info');
 });
+
+// use this route to send voters to voting page - excepts uniqid slug
+Route::get('/vote/{url}', 'VoteController@index')->name('vote');
+Route::get('/vote/cast-vote/{option}', 'VoteController@update')->name('cast_vote');

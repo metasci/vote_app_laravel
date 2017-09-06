@@ -17,6 +17,7 @@ class CreatePollOptionsTable extends Migration
             $table->increments('id');
             $table->integer('poll_id');
             $table->string('option');
+            $table->integer('vote_count')->default(0);
             $table->timestamps();
         });
     }

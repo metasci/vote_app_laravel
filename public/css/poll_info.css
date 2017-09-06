@@ -1,0 +1,13 @@
+.text-centered {
+    text-align: center;
+}
+
+.text-centered .container {
+    text-align: left;
+}
+
+
+
+.list-group li {
+    margin: 0 auto 0 auto;
+}
