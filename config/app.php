@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://vote-tote.herokuapp.com/'),
+    'url' => env('APP_URL', 'https://vote-tote.herokuapp.com'),
 
     /*
     |--------------------------------------------------------------------------
